@@ -1,0 +1,22 @@
+module "vpn" {
+  source = "../modules/vpn"
+  region = "us-central1"
+  # name     = "ha-vpn-1"
+  # network  = google_compute_network.tf_vpc_net1.self_link
+  project_id            = var.project_id
+  peer_ip               = "169.254.0.1"
+  asn_number            = 64515
+  router_int_ip         = "169.254.0.1/30"
+  vpn_tunnel_name       = "tunnel1"
+  router_name           = "router1"
+  preshared_key         = "a secret message"
+  router_interface_name = "interface1"
+  router_peer_name      = "router1-peer1"
+  peer_asn_number       = 64515
+  router_peer_int_ip    = "169.254.0.1/30"
+  network_self_link     = module.network.self_link
+  static_ip_address     = "192.168.0.0/24"
+  router_region         = "us-central1"
+  tunnel_region         = "us-central1"
+}
+
