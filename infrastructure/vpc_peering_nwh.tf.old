@@ -1,8 +1,0 @@
-module "vpc_peering_networkhub" {
-  source                 = "../modules/vpc_peering"
-  network_self_link      = module.network.self_link
-  host_network_self_link = data.google_compute_network.host_network.self_link
-  project_id   = var.project_id
-  project_name = var.VPCPeeringProName
-  peering_name = var.Peering_CloudExchange
-}

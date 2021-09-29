@@ -1,9 +1,0 @@
-module "host_project" {
-  source     = "../modules/shared_vpc_host_project"
-  project_id = "${module.project.project_id}"
-}
-
-output "host_id" {
-  description = "Project ID"
-  value       = "${module.host_project}"
-}
